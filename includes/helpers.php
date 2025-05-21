@@ -52,8 +52,8 @@ function ud_extract_datetime_range($blocks) {
 	foreach ($blocks as $block) {
 		if ($block['blockName'] === 'ud/datetime-block') {
 			return [
-				'start' => $block['attrs']['start'] ?? null,
-				'end'   => $block['attrs']['end'] ?? null,
+				'start' => $block['attrs']['startDate'] ?? null,
+				'end'   => $block['attrs']['endDate'] ?? null,
 			];
 		}
 		if (!empty($block['innerBlocks'])) {

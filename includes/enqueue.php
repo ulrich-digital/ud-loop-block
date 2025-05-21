@@ -14,7 +14,7 @@
 
 defined('ABSPATH') || exit;
 
-
+/*
 add_action('enqueue_block_assets', function () {
     if (!is_admin()) {
         // Isotope direkt aus dem Quellverzeichnis laden
@@ -29,10 +29,12 @@ add_action('enqueue_block_assets', function () {
         // Kompilierte Frontend-Datei aus dem Build-Ordner
         wp_enqueue_script(
             'ud-loop-frontend',
-            plugins_url('../build/frontend.js', __FILE__),
+            plugins_url('../build/frontend-script.js', __FILE__),
             ['isotope-js'],
-            filemtime(plugin_dir_path(__FILE__) . '../build/frontend.js'),
+            filemtime(plugin_dir_path(__FILE__) . '../build/frontend-script.js'),
             true
         );
+
     }
 });
+*/
