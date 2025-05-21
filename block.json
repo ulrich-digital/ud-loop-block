@@ -1,0 +1,57 @@
+{
+    "apiVersion": 2,
+    "name": "ud/loop-block",
+    "title": "Custom Loop Block",
+    "category": "widgets",
+    "icon": "calendar",
+    "description": "Loop-Block mit erweiterten Einstellungen",
+    "editorStyle": "file:./build/editor-style.css",
+    "style": "file:./build/frontend-style.css",
+    "editorScript": "file:./build/editor-script.js",
+    "script": "file:./build/frontend-script.js",
+    "supports": {
+        "html": false,
+        "className": true
+    },
+    "usesContext": [
+        "postId"
+    ],
+    "attributes": {
+        "postType": {
+            "type": "string",
+            "default": "post"
+        },
+        "selectedPageParent": {
+            "type": [
+                "number",
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        "displayMode": {
+            "type": "string",
+            "default": "teaser"
+        },
+        "sortMode": {
+            "type": "string",
+            "default": "published"
+        },
+        "sortOrder": {
+            "type": "string",
+            "default": "DESC"
+        },
+        "breakpoints": {
+            "type": "array",
+            "default": []
+        },
+        "postCount": {
+            "type": [
+                "number",
+                "null",
+                "string"
+            ],
+            "default": null
+        }
+    }
+}

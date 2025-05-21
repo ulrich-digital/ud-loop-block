@@ -1,0 +1,102 @@
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/frontend.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+.ud-loop-default {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius, 16px);
+  overflow: hidden;
+}
+.ud-loop-default > *:not(.ud-loop-default-image) {
+  padding-left: var(--kachel-padding-x, 25px);
+  padding-right: var(--kachel-padding-x, 25px);
+}
+.ud-loop-default .ud-loop-default-image img {
+  width: 100%;
+  height: auto;
+}
+.ud-loop-default .wp-block-buttons {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: var(--kachel-padding-x, 25px);
+}
+.ud-loop-default .wp-block-button .wp-element-button {
+  background-color: #F5F5F5;
+  border-radius: 100px;
+  padding: 4px 12px;
+  border: 1.5px solid #F5F5F5;
+  transition: all 0.2s;
+  font-size: 75%;
+  display: inline-block;
+  color: var(--near-black);
+}
+.ud-loop-default .wp-block-button .wp-element-button:hover {
+  color: var(--wp--preset--color--highlight-700);
+  background-color: var(--wp--preset--color--highlight-100);
+  border-color: var(--wp--preset--color--highlight-100);
+}
+.ud-loop-default .wp-block-button .wp-element-button::after {
+  content: "\f178";
+  font-family: "Font Awesome 6 Sharp";
+  font-weight: 400;
+  margin-left: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+/* =============================================================== *\
+   Loop im Masonry-Style
+\* =============================================================== */
+.ud-loop-wrapper,
+.is-style-masonry-loop {
+  overflow: hidden;
+  margin-bottom: 5vw;
+}
+.ud-loop-wrapper > ul,
+.is-style-masonry-loop > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+  min-width: calc(100% + 40px);
+}
+.ud-loop-wrapper > ul > li,
+.is-style-masonry-loop > ul > li {
+  width: 33.333%;
+  max-width: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.ud-loop-wrapper .is-style-neuigkeit,
+.is-style-masonry-loop .is-style-neuigkeit {
+  max-width: none;
+}
+
+.wp-block-ud-loop-block > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+  min-width: calc(100% + 40px);
+}
+.wp-block-ud-loop-block > ul > li {
+  width: 33.333%;
+  max-width: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  .is-style-masonry-loop > ul > li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .is-style-masonry-loop > ul > li {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=frontend-style.css.map*/

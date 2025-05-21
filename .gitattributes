@@ -1,0 +1,26 @@
+# Treat text files as UTF-8
+* text=auto
+
+# Normalize line endings for common text file types
+*.php text
+*.js text
+*.css text
+*.scss text
+*.html text
+*.md text
+*.json text
+*.yml text
+*.xml text
+*.sh text
+
+# Exclude dev files from export (e.g. WP.org release ZIPs)
+.gitignore export-ignore
+.gitattributes export-ignore
+.editorconfig export-ignore
+webpack.config.js export-ignore
+package.json export-ignore
+package-lock.json export-ignore
+node_modules/ export-ignore
+src/ export-ignore
+.vscode/ export-ignore
+README.md export-ignore
