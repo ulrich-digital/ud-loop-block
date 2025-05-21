@@ -9,23 +9,6 @@
 
 defined('ABSPATH') || exit;
 
-//add_action('init', 'ud_loop_block_register');
-/*
-function ud_loop_block_register() {
-    register_block_type_from_metadata(__DIR__ . '/../', [
-        'render_callback' => 'ud_loop_block_render',
-    ]);
-}
-
-if (function_exists('register_block_style')) {
-    register_block_style('ud/loop-block', [
-        'name'  => 'masonry-loop',
-        'label' => 'Masonry',
-    ]);
-}
-*/
-
-
 add_action('init', function () {
     // Isotope registrieren
     if (!wp_script_is('isotope-js', 'registered')) {
