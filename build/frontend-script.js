@@ -116,6 +116,7 @@ containers.forEach(container => {
   }) => {
     iso.layout(); // immer layouten – optional optimierbar
     setTimeout(() => iso.layout(), 100);
+    setTimeout(() => iso.layout(), 500);
   });
 });
 

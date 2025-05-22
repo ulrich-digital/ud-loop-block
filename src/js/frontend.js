@@ -51,6 +51,7 @@ containers.forEach((container) => {
 	grids.forEach(({ iso }) => {
     	iso.layout(); // immer layouten – optional optimierbar
         setTimeout(() => iso.layout(), 100);
+        setTimeout(() => iso.layout(), 500);
     });
 });
 
