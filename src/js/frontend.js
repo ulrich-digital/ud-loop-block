@@ -22,11 +22,12 @@
    - Speichert Instanzen zur späteren Verwendung (z. B. bei UI-Toggles)
    - Führt iso.layout() nach kurzer Verzögerung mehrfach aus, um
      Layout-Probleme bei dynamischen Inhalten zu vermeiden
-   - Reagiert auf Klicks auf .details-toggle (z. B. Akkordeon),
+   - Reagiert auf Klicks auf .ud-accordion__title (z. B. Akkordeon),
      um Layout nach Sichtbarkeitswechsel zu aktualisieren
 \* =============================================================== */
-
 import '../css/frontend.scss';
+import Isotope from 'isotope-layout';
+document.addEventListener('DOMContentLoaded', () => {
 
 const containers = document.querySelectorAll('.is-style-masonry-loop ul.ud-loop-list');
 const grids = [];
@@ -56,7 +57,8 @@ containers.forEach((container) => {
 });
 
 // Layout neu berechnen bei Toggle-Klicks
-document.querySelectorAll('.details-toggle').forEach((toggle) => {
+
+document.querySelectorAll('.ud-accordion__title').forEach((toggle) => {
 	toggle.addEventListener('click', () => {
 		// Finde das nächste UL innerhalb des gleichen Abschnitts
 		grids.forEach(({ iso }) => {
@@ -80,13 +82,12 @@ document.querySelectorAll('.details-toggle').forEach((toggle) => {
 	- Blendet Listeneinträge (<li>) entsprechend aus oder ein
 	- Aktualisiert sich automatisch beim Fenster-Resize mit Debounce (200 ms Verzögerung), um Performance zu schonen.
 \* =============================================================== */
-
 function applyUdLoopBreakpoints() {
 	const wrappers = document.querySelectorAll('.wp-block-ud-loop-block');
+
 	wrappers.forEach((wrapper) => {
 		const breakpointData = wrapper.getAttribute('data-breakpoints');
 		if (!breakpointData) return;
-
 		let breakpoints;
 		try {
 			breakpoints = JSON.parse(breakpointData);
@@ -123,7 +124,7 @@ function applyUdLoopBreakpoints() {
 		});
 	});
 }
-
+applyUdLoopBreakpoints();
 // Bei Seitenaufruf
 document.addEventListener('DOMContentLoaded', applyUdLoopBreakpoints);
 
@@ -131,4 +132,6 @@ document.addEventListener('DOMContentLoaded', applyUdLoopBreakpoints);
 window.addEventListener('resize', () => {
 	clearTimeout(window.__udLoopResizeTimeout);
 	window.__udLoopResizeTimeout = setTimeout(applyUdLoopBreakpoints, 200);
+});
+
 });

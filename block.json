@@ -21,6 +21,14 @@
             "type": "string",
             "default": "post"
         },
+        "selectedPageId": {
+            "type": "number",
+            "default": 0
+        },
+        "filterFutureDates": {
+            "type": "boolean",
+            "default": false
+        },
         "selectedPageParent": {
             "type": [
                 "number",
@@ -28,10 +36,6 @@
                 "string"
             ],
             "default": null
-        },
-        "displayMode": {
-            "type": "string",
-            "default": "teaser"
         },
         "sortMode": {
             "type": "string",
@@ -52,6 +56,18 @@
                 "string"
             ],
             "default": null
+        },
+        "showReadMore": {
+            "type": "boolean",
+            "default": false
+        },
+        "selectedTaxonomyTerm": {
+            "type": "string",
+            "default": ""
+        },
+        "layoutStyle": {
+            "type": "string",
+            "default": "standard"
         }
     }
 }

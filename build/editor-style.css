@@ -1,13 +1,44 @@
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/editor.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /* =============================================================== *\
-   Editor-Styles
+   Editor Styles für .is-style-masonry-loop (innerhalb .wp-admin)
 \* =============================================================== */
-.wp-admin .is-style-masonry-loop .wp-block-heading {
+.is-style-masonry-loop .wp-block-heading {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 100%;
+}
+.is-style-masonry-loop ul.ud-loop-list,
+.is-style-masonry-loop > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+  min-width: calc(100% + 40px);
+  list-style: none;
+}
+.is-style-masonry-loop ul.ud-loop-list > li,
+.is-style-masonry-loop > ul > li {
+  width: 33.333%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1000px) {
+  .is-style-masonry-loop ul.ud-loop-list > li,
+  .is-style-masonry-loop > ul > li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .is-style-masonry-loop ul.ud-loop-list > li,
+  .is-style-masonry-loop > ul > li {
+    width: 100%;
+  }
+}
+.is-style-masonry-loop .is-style-neuigkeit {
+  max-width: none;
 }
 
 /*# sourceMappingURL=editor-style.css.map*/

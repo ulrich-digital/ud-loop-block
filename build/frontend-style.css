@@ -1,99 +1,239 @@
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/frontend.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************/
-.ud-loop-default {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--border-radius, 16px);
-  overflow: hidden;
-}
-.ud-loop-default > *:not(.ud-loop-default-image) {
-  padding-left: var(--kachel-padding-x, 25px);
-  padding-right: var(--kachel-padding-x, 25px);
-}
-.ud-loop-default .ud-loop-default-image img {
-  width: 100%;
-  height: auto;
-}
-.ud-loop-default .wp-block-buttons {
-  display: flex;
-  margin-top: 1em;
-  margin-bottom: var(--kachel-padding-x, 25px);
-}
-.ud-loop-default .wp-block-button .wp-element-button {
-  background-color: #F5F5F5;
-  border-radius: 100px;
-  padding: 4px 12px;
-  border: 1.5px solid #F5F5F5;
-  transition: all 0.2s;
-  font-size: 75%;
-  display: inline-block;
-  color: var(--near-black);
-}
-.ud-loop-default .wp-block-button .wp-element-button:hover {
-  color: var(--wp--preset--color--highlight-700);
-  background-color: var(--wp--preset--color--highlight-100);
-  border-color: var(--wp--preset--color--highlight-100);
-}
-.ud-loop-default .wp-block-button .wp-element-button::after {
-  content: "\f178";
-  font-family: "Font Awesome 6 Sharp";
-  font-weight: 400;
-  margin-left: 0.5em;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.3s ease;
+@charset "UTF-8";
+:root {
+  --font--size--300: 16px;
+  --font--weight--500: 500;
 }
 
 /* =============================================================== *\
-   Loop im Masonry-Style
+   Loop-Block Container
+   .wp-block-ud-loop-block → enthält ul.ud-loop-list
 \* =============================================================== */
-.ud-loop-wrapper,
-.is-style-masonry-loop {
-  overflow: hidden;
-  margin-bottom: 5vw;
+.wp-block-ud-loop-block {
+  font-size: var(--font--size--300);
+  /* Bildungsangebote */
+  /* Datetime (Termine)*/
+  /* Headings innerhalb der Liste */
+  /* Datetime Block */
+  /* Datetime Block in Container (nur für Termine) */
+  /* Accordion-Block */
+  /* Readmore-Button */
+  /* Childpage-Bild direkt */
+  /* Termine (datetime-loop-container, z. B. in UL) */
+  /* childpage teaser text*/
 }
-.ud-loop-wrapper > ul,
+.wp-block-ud-loop-block .is-content-type-childpage figure.wp-block-gallery,
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote figure.wp-block-gallery {
+  margin-bottom: 0;
+}
+.wp-block-ud-loop-block .is-content-type-childpage .teaser-text-container,
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .teaser-text-container {
+  position: relative;
+  left: auto;
+  max-width: none;
+  background-color: transparent;
+  filter: none;
+  font-size: 1rem;
+  border-radius: 0;
+  bottom: auto;
+  padding: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+.wp-block-ud-loop-block .is-content-type-childpage .teaser-text-container h2.wp-block-heading.berufsbezeichnung,
+.wp-block-ud-loop-block .is-content-type-childpage .teaser-text-container h2,
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .teaser-text-container h2.wp-block-heading.berufsbezeichnung,
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .teaser-text-container h2 {
+  color: inherit;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .ud-loop-list {
+  color: white;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .wp-block-heading.berufsbezeichnung {
+  font-size: 1.44rem;
+  color: white;
+  line-height: 1.84rem;
+  margin: 0;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .teaser-text-container .ausbildungsdauer {
+  display: inline-block;
+  border: 1px solid white;
+  line-height: 1rem;
+  padding: 4px 8px;
+  border-radius: 100px;
+  margin: 1rem 0;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .teaser-text-container .kurzbeschrieb {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .childpage-loop-title {
+  display: none;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .wp-block-buttons.is-content-justification-right {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .is-style-readmore_single .wp-block-button__link {
+  margin: 0;
+  border: 0;
+  padding: 5px 12px;
+  background-color: transparent;
+  color: inherit;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .is-style-readmore_single .wp-block-button__link::after {
+  content: "\f178";
+  display: inline-block;
+  margin-left: 0.5em;
+  font-family: "Font Awesome 6 Sharp";
+  font-weight: 900;
+  transition: transform 0.2s ease;
+}
+.wp-block-ud-loop-block .is-content-type-ud_bildungsangebote .is-style-readmore_single .wp-block-button__link:hover::after {
+  transform: translateX(4px);
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block {
+  display: flex;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block .wp-block-ud-datetime-block {
+  flex-basis: 20%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block > p {
+  flex-grow: 1;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block .wp-block-ud-link-block > a {
+  flex-direction: row;
+  padding: 0;
+  align-items: center;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block .wp-block-ud-link-block > a .ud-link-block__title {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block .wp-block-ud-link-block > a .ud-link-block__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page .wp-block-ud-content-for-loop-block .wp-block-ud-link-block > a .ud-link-block__icon .ud-link-block__link-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: auto;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page.is-compact-layout .content {
+  flex-wrap: wrap;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page.is-compact-layout .content .wp-block-ud-datetime-block {
+  flex-basis: 100%;
+  margin-bottom: 0.25rem;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page.is-compact-layout .content .wp-block-ud-datetime-block .datetime {
+  display: flex;
+  justify-content: space-between;
+  font-size: 90%;
+}
+.wp-block-ud-loop-block .is-content-type-datetime-page.is-compact-layout .content .text {
+  padding-left: 0;
+  font-weight: 700;
+}
+.wp-block-ud-loop-block .main-heading {
+  margin: 0.5em 0;
+}
+.wp-block-ud-loop-block .wp-block-ud-datetime-block {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  flex-grow: unset;
+  flex-basis: unset;
+  font-weight: var(--font--weight--500);
+}
+.wp-block-ud-loop-block .wp-block-ud-datetime-loop-container .wp-block-ud-datetime-block {
+  flex-basis: 20%;
+}
+.wp-block-ud-loop-block .wp-block-ud-accordion-block {
+  background-color: transparent;
+  padding: 0;
+  margin-top: 0.75em;
+}
+.wp-block-ud-loop-block .wp-block-ud-accordion-block .wp-block-heading {
+  font-weight: var(--font--weight--500);
+}
+.wp-block-ud-loop-block .is-style-readmore_single .wp-block-button__link {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+.wp-block-ud-loop-block .is-content-type-childpage {
+  padding: var(--kachel-padding-x, 25px);
+}
+.wp-block-ud-loop-block .is-content-type-childpage figure {
+  margin-bottom: var(--kachel-padding-x, 25px);
+}
+.wp-block-ud-loop-block .is-content-type-childpage .wp-block-heading {
+  margin: 0 0 1.44rem;
+}
+.wp-block-ud-loop-block .is-content-type-childpage .childpage-loop-buttons {
+  line-height: 1rem;
+}
+.wp-block-ud-loop-block .wp-block-ud-datetime-loop-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: 1em;
+}
+.wp-block-ud-loop-block .is-content-type-childpage .teaser-text-container {
+  display: none;
+}
+
+/* =============================================================== *\
+   Schriftgrössen
+\* =============================================================== */
+.wp-block-ud-loop-block .datetime,
+.wp-block-ud-loop-block p,
+.wp-block-ud-loop-block .wp-block-ud-link-block .ud-link-block__title {
+  font-size: 1rem;
+}
+
+/* =============================================================== *\
+   Masonry
+\* =============================================================== */
+.is-style-masonry-loop .wp-block-ud-content-for-loop-block {
+  margin: 0;
+}
+.is-style-masonry-loop .is-content-type-datetime-page .wp-block-ud-content-for-loop-block {
+  flex-direction: column;
+}
+.is-style-masonry-loop ul.ud-loop-list,
 .is-style-masonry-loop > ul {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -20px;
-  margin-right: -20px;
-  min-width: calc(100% + 40px);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  min-width: calc(100% + 2rem);
+  list-style: none;
 }
-.ud-loop-wrapper > ul > li,
-.is-style-masonry-loop > ul > li {
+.is-style-masonry-loop ul.ud-loop-list > li {
   width: 33.333%;
-  max-width: none;
-  padding: 20px;
+  padding: 1rem 1rem;
   box-sizing: border-box;
 }
-.ud-loop-wrapper .is-style-neuigkeit,
-.is-style-masonry-loop .is-style-neuigkeit {
-  max-width: none;
-}
-
-.wp-block-ud-loop-block > ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  margin-right: -20px;
-  min-width: calc(100% + 40px);
-}
-.wp-block-ud-loop-block > ul > li {
-  width: 33.333%;
-  max-width: none;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
 @media screen and (max-width: 1000px) {
+  .is-style-masonry-loop ul.ud-loop-list > li,
   .is-style-masonry-loop > ul > li {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
+  .is-style-masonry-loop ul.ud-loop-list > li {
+    padding: 0.5rem 1rem;
+  }
+  .is-style-masonry-loop ul.ud-loop-list > li,
   .is-style-masonry-loop > ul > li {
     width: 100%;
   }

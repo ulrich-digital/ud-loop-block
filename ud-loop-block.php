@@ -1,11 +1,13 @@
 <?php
 /**
- * Plugin Name:       Loop Block
- * Description:       Dynamischer Loop-Block mit erweiterten Sortier- und Filterfunktionen.
- * Version:           1.0.0
- * Author:            ulrich.digital
- * Author URI:        https://ulrich.digital/
- * License:           GPL-2.0-or-later
+ * Plugin Name:     UD Block: Erweiterter Loop
+ * Description:     Dynamischer Block zur Ausgabe von Beiträgen, Veranstaltungen oder Unterseiten mit erweiterten Sortier- und Filterfunktionen.
+ * Version:         1.0.0
+ * Author:          ulrich.digital gmbh
+ * Author URI:      https://ulrich.digital/
+ * License:         GPL v2 or later
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:     loop-block-ud
  */
 
 /**

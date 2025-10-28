@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Loop-Block mit erweiterten Einstellungen.",
   "scripts": {
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack --watch --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack --watch --config webpack.config.js"
   },
   "author": "ulrich.digital gmbh",
   "license": "GPL-2.0-or-later",
@@ -12,6 +12,7 @@
     "@wordpress/scripts": "^30.15.0"
   },
   "dependencies": {
-    "@wordpress/icons": "^10.23.0"
+    "@wordpress/icons": "^10.23.0",
+    "isotope-layout": "^3.0.6"
   }
 }

@@ -1,12 +1,51 @@
 /* =============================================================== *\
-   Editor-Styles
+   Editor Styles für .is-style-masonry-loop (innerhalb .wp-admin)
 \* =============================================================== */
-.wp-admin {
-	.is-style-masonry-loop {
-		.wp-block-heading {
-			margin-top: 0;
-			margin-bottom: 0;
-font-size: 100%;
+.is-style-masonry-loop {
+	// Headings im Block
+	.wp-block-heading {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 100%;
+	}
+
+	// UL-Layout (auch direkt in Blockstruktur)
+	ul.ud-loop-list,
+	> ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -20px;
+		margin-right: -20px;
+		min-width: calc(100% + 40px);
+		list-style: none;
+	}
+
+	// LI-Items
+	ul.ud-loop-list > li,
+	> ul > li {
+		width: 33.333%;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+
+	// Responsive: 2 Spalten bei ≤ 1000px
+	@media screen and (max-width: 1000px) {
+		ul.ud-loop-list > li,
+		> ul > li {
+			width: 50%;
 		}
+	}
+
+	// Responsive: 1 Spalte bei ≤ 600px
+	@media screen and (max-width: 600px) {
+		ul.ud-loop-list > li,
+		> ul > li {
+			width: 100%;
+		}
+	}
+
+	// Innerer Block-Stil „Neuigkeit“ entsperren (Breite)
+	.is-style-neuigkeit {
+		max-width: none;
 	}
 }
