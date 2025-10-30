@@ -1,4 +1,4 @@
-# Technische Analyse – UD Loop Block
+# UD Loop Block
 
 Der UD Loop Block ist ein modularer, REST-gesteuerter Inhaltsblock, der Inhalte aus verschiedenen CPTs dynamisch rendert.
 Er erkennt automatisch, wenn ein Bildungsangebot oder eine Seite mit Datumsblöcken gewählt wird, und aktiviert entsprechende Filteroptionen oder REST-Abfragen.
@@ -8,13 +8,13 @@ Damit ist er universell einsetzbar für News-, Bildungs- und datumsbasierte Inha
 
 ## Screenshots
 
-### Editor-Ansicht
-![ Editor-Ansicht](./assets/editor-view_02.png)
-*Abbildung: Loop-Block in der Editor-Ansicht.*
-
 ### Frontend-Ansicht
 ![Wellen Grafik – Frontend-Ansicht](./assets/ud-loop-block.png)
 *Abbildung: Loop-Block in der Frontend-Ansicht*
+
+### Editor-Ansicht
+![ Editor-Ansicht](./assets/editor-view_02.png)
+*Abbildung: Loop-Block in der Editor-Ansicht.*
 
 ---
 
