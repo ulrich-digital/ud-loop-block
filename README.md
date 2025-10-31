@@ -4,19 +4,17 @@ Der UD Loop Block ist ein modularer, REST-gesteuerter Inhaltsblock, der Inhalte 
 Er erkennt automatisch, wenn ein Bildungsangebot oder eine Seite mit Datumsblöcken gewählt wird, und aktiviert entsprechende Filteroptionen oder REST-Abfragen.
 Damit ist er universell einsetzbar für News-, Bildungs- und datumsbasierte Inhaltsübersichten innerhalb von Full Site Editing Themes.
 
----
+
 
 ## Screenshots
 
-### Frontend-Ansicht
 ![Wellen Grafik – Frontend-Ansicht](./assets/ud-loop-block.png)
-*Abbildung: Loop-Block in der Frontend-Ansicht*
+*Loop-Block in der Frontend-Ansicht*
 
-### Editor-Ansicht
 ![ Editor-Ansicht](./assets/editor-view_02.png)
-*Abbildung: Loop-Block in der Editor-Ansicht.*
+*Loop-Block in der Editor-Ansicht.*
 
----
+
 
 ## 1. Funktionen
 
@@ -45,7 +43,7 @@ Der UD Loop Block bietet verschiedene globale Einstellungen:
 - Breakpoints können im Editor hinzugefügt, geändert oder entfernt werden.
 - Änderungen werden automatisch mit dem Attribut `breakpoints` synchronisiert.
 
----
+
 
 ## 2. Post-Types
 
@@ -72,7 +70,7 @@ Der Block verarbeitet folgende Post-Types:
 * Wenn `postType` andere CPTs betrifft (z. B. `ud_news`), entfallen diese Zusatzoptionen.
 
 
----
+
 
 ## 3. Konditionale Logik im Editor (edit.js)
 
@@ -92,19 +90,20 @@ Der Block verarbeitet folgende Post-Types:
   * Wenn `contentType` gesetzt ist, kann `postType` überschrieben werden (z. B. Gruppierung mehrerer Bildungsangebote unter einem logischen Typ).
   * Änderung von `postType` → Resets relevanter Taxonomieattribute (`terms`, `bildungsbereich`).
 
----
+
 
 ## 4. Taxonomien
 
-| Taxonomie         | Zugehöriger CPT       | Verwendung                                               |
-| ----------------- | --------------------- | -------------------------------------------------------- |
-| `category`        | `post`                | Standardkategorien für Beiträge                          |
-| `bildungsbereich` | `ud_bildungsangebote` | Filterung im Editor über REST, dynamische Terms-Auswahl  |
+| Taxonomie         | Zugehöriger CPT       | Verwendung                                              |
+|-------------------|-----------------------|---------------------------------------------------------|
+| `category`        | `post`                | Standardkategorien für Beiträge                         |
+| `bildungsbereich` | `ud_bildungsangebote` | Filterung im Editor über REST, dynamische Terms-Auswahl |
 | `post_tag`        | optional              | teils verwendet für Filterung oder Tag-basierte Ausgaben |
 
 
 
----
+
+
 
 ## 5. REST-Endpunkte (api.php)
 
@@ -128,18 +127,19 @@ Registrierte Namespace: **`ud-loop-block/v1`**
 * `edit.js` verwendet diesen Endpunkt für Live-Vorschau (dynamisches Laden der Beiträge)
 * Beim Wechsel der Filteroptionen werden neue Abfragen an `/ud-loop-block/v1/posts` gesendet.
 
----
+
 
 ## 6. Abhängigkeiten
 
 | Abhängigkeit                                                       | Zweck                                                                                    |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+|--------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | `@wordpress/data`, `@wordpress/api-fetch`, `@wordpress/components` | Dynamische REST- und UI-Steuerung im Editor                                              |
-| `includes/helpers.php`                                             | Hilfsfunktionen zur Ausgabe von Post-Informationen (z. B. Bilder, Permalinks, Metadaten) |
+| `includes/helpers.php`                                             | Hilfsfunktionen zur Ausgabe von Post-Informationen (z. B. Bilder, Permalinks, Metadaten) |
 | `includes/render.php`                                              | PHP-Template für Frontend-Rendering, greift auf `helpers.php` zu                         |
 | UD-Plugins mit CPTs (`ud_bildungsangebote`, `ud_news`, etc.)       | Datenquelle für den Loop                                                                 |
 
----
+
+
 
 ## 7. helpers.php
 
@@ -150,7 +150,7 @@ Registrierte Namespace: **`ud-loop-block/v1`**
   * Metadaten nach CPT zu formatieren
   * Bei `ud_bildungsangebote`: Ausgabe ergänzt um Taxonomie "bildungsbereich"
 
----
+
 
 ## 8. render.php
 
@@ -163,17 +163,32 @@ Registrierte Namespace: **`ud-loop-block/v1`**
   * Wenn `postType === 'datetime-page'` → Filtert nach Seiten, die den Block `ud/datetime-block` enthalten
   * Wenn `contentType` gesetzt → Anpassung der Query an alternative CPTs
 
----
+
 
 ## 9. Zusammenfassung der Logik
 
 | Bedingung                            | Aktion / Auswirkung                                                        |
-| ------------------------------------ | -------------------------------------------------------------------------- |
+|  | -- |
 | `postType === 'ud_bildungsangebote'` | Zeigt Select-Feld „Bildungsbereich“, ruft REST `/wp/v2/bildungsbereich` ab |
 | `postType === 'datetime-page'`       | Durchsucht Seiten nach `ud/datetime-block` und zeigt nur gefundene an      |
 | `postType === 'ud_news'`             | Standardanzeige, keine zusätzlichen Taxonomien                             |
 | `contentType` gesetzt                | Überschreibt Post-Type-Zuweisung (z. B. Gruppierung)                       |
 | REST-Response leer                   | Zeigt Platzhalterhinweis im Editor                                         |
+
+
+
+
+
+
+## Autor
+
+[ulrich.digital gmbh](https://ulrich.digital)
+
+
+## Lizenz
+
+GPL v2 or later
+[https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 
 
 
