@@ -168,12 +168,13 @@ Registrierte Namespace: **`ud-loop-block/v1`**
 ## 9. Zusammenfassung der Logik
 
 | Bedingung                            | Aktion / Auswirkung                                                        |
-|  | -- |
+|--------------------------------------|----------------------------------------------------------------------------|
 | `postType === 'ud_bildungsangebote'` | Zeigt Select-Feld „Bildungsbereich“, ruft REST `/wp/v2/bildungsbereich` ab |
 | `postType === 'datetime-page'`       | Durchsucht Seiten nach `ud/datetime-block` und zeigt nur gefundene an      |
 | `postType === 'ud_news'`             | Standardanzeige, keine zusätzlichen Taxonomien                             |
-| `contentType` gesetzt                | Überschreibt Post-Type-Zuweisung (z. B. Gruppierung)                       |
+| `contentType` gesetzt                | Überschreibt Post-Type-Zuweisung (z. B. Gruppierung)                       |
 | REST-Response leer                   | Zeigt Platzhalterhinweis im Editor                                         |
+
 
 
 
