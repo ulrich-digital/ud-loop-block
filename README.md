@@ -142,47 +142,6 @@ Registrierte Namespace: **`ud-loop-block/v1`**
 
 
 
-## 6. Abhängigkeiten
-
-| Abhängigkeit                                                       | Zweck                                                                                    |
-|--------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| `@wordpress/data`, `@wordpress/api-fetch`, `@wordpress/components` | Dynamische REST- und UI-Steuerung im Editor                                              |
-| `includes/helpers.php`                                             | Hilfsfunktionen zur Ausgabe von Post-Informationen (z. B. Bilder, Permalinks, Metadaten) |
-| `includes/render.php`                                              | PHP-Template für Frontend-Rendering, greift auf `helpers.php` zu                         |
-| UD-Plugins mit CPTs (`ud_bildungsangebote`, `ud_news`, etc.)       | Datenquelle für den Loop                                                                 |
-
-
-
-
-## 7. helpers.php
-
-* Stellt Funktionssammlung bereit, um:
-
-  * Beitragsbilder mit `wp_get_attachment_image_url()` zu holen
-  * Permalinks und Titel korrekt zu verlinken
-  * Metadaten nach CPT zu formatieren
-  * Bei `ud_bildungsangebote`: Ausgabe ergänzt um Taxonomie "bildungsbereich"
-
-
-
-## 8. render.php
-
-* Verantwortlich für die serverseitige Darstellung der Beiträge
-* Arbeitet mit WordPress-Standardfunktionen (`WP_Query`, `get_the_post_thumbnail`, `get_the_excerpt`, etc.)
-* Verwendet `helpers.php` für Bild- und Linkverarbeitung
-* Prüft dynamisch:
-
-  * Wenn `postType === 'ud_bildungsangebote'` → Ausgabe mit Taxonomiebezug `bildungsbereich`
-  * Wenn `postType === 'datetime-page'` → Filtert nach Seiten, die den Block `ud/datetime-block` enthalten
-  * Wenn `contentType` gesetzt → Anpassung der Query an alternative CPTs
-
-
-
-
-
-
-
-
 
 
 
