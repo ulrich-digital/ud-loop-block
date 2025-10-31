@@ -105,40 +105,7 @@ Der Block verarbeitet folgende Post-Types:
 
 
 
-## 4. Taxonomien
 
-| Taxonomie         | Zugehöriger CPT       | Verwendung                                              |
-|-------------------|-----------------------|---------------------------------------------------------|
-| `category`        | `post`                | Standardkategorien für Beiträge                         |
-| `bildungsbereich` | `ud_bildungsangebote` | Filterung im Editor über REST, dynamische Terms-Auswahl |
-| `post_tag`        | optional              | teils verwendet für Filterung oder Tag-basierte Ausgaben |
-
-
-
-
-
-
-## 5. REST-Endpunkte (api.php)
-
-Registrierte Namespace: **`ud-loop-block/v1`**
-
-### Endpunkt: `/ud-loop-block/v1/posts`
-
-* **Methode:** `GET`
-* **Parameter:**
-
-  * `post_type` – Ziel-Post-Type
-  * `taxonomy` – Optional, zu filternde Taxonomie
-  * `terms` – Array von Slugs oder IDs
-  * `orderby`, `order`, `limit` – Sortier- und Paginierungsparameter
-  * `contentType` – Alternative Gruppierungslogik (z. B. Bildungsangebote)
-* **Callback:** `ud_loop_block_get_posts()` (in `api.php` definiert)
-* **Ergebnis:** JSON-Array mit Post-Objekten (Titel, Link, ID, Auszug, Bild, Taxonomiebezüge)
-
-### REST-Nutzung im Editor
-
-* `edit.js` verwendet diesen Endpunkt für Live-Vorschau (dynamisches Laden der Beiträge)
-* Beim Wechsel der Filteroptionen werden neue Abfragen an `/ud-loop-block/v1/posts` gesendet.
 
 
 
