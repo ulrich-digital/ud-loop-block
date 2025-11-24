@@ -25,54 +25,71 @@
    - Reagiert auf Klicks auf .ud-accordion__title (z. B. Akkordeon),
      um Layout nach Sichtbarkeitswechsel zu aktualisieren
 \* =============================================================== */
-import '../css/frontend.scss';
-import Isotope from 'isotope-layout';
-document.addEventListener('DOMContentLoaded', () => {
+import "../css/frontend.scss";
+import Isotope from "isotope-layout";
+document.addEventListener("DOMContentLoaded", () => {
+  const containers = document.querySelectorAll(
+    ".is-style-masonry-loop ul.ud-loop-list",
+  );
+  const grids = [];
 
-const containers = document.querySelectorAll('.is-style-masonry-loop ul.ud-loop-list');
-const grids = [];
+  containers.forEach((container) => {
+    // Nur direkte li-Kinder zu Items machen
+    Array.from(container.children).forEach((child) => {
+      if (child.tagName === "LI") {
+        child.classList.add("masonry-item");
+      }
+    });
 
-containers.forEach((container) => {
-	// Nur direkte li-Kinder zu Items machen
-	Array.from(container.children).forEach((child) => {
-		if (child.tagName === 'LI') {
-			child.classList.add('masonry-item');
-		}
-	});
+    const iso = new Isotope(container, {
+      itemSelector: ".masonry-item",
+      layoutMode: "masonry",
+      transitionDuration: "0.3s",
+      percentPosition: true,
+    });
 
-	const iso = new Isotope(container, {
-		itemSelector: '.masonry-item',
-		layoutMode: 'masonry',
-		transitionDuration: '0.3s',
-		percentPosition: true,
-	});
+    // Speichern, falls später gebraucht
+    grids.push({ container, iso });
+    grids.forEach(({ iso }) => {
+      iso.layout(); // immer layouten – optional optimierbar
+      setTimeout(() => iso.layout(), 100);
+      setTimeout(() => iso.layout(), 500);
+    });
+  });
 
-  	// Speichern, falls später gebraucht
-  	grids.push({ container, iso });
-	grids.forEach(({ iso }) => {
-    	iso.layout(); // immer layouten – optional optimierbar
+  // Layout neu berechnen bei Toggle-Klicks
+
+  document.querySelectorAll(".ud-accordion__title").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      // Finde das nächste UL innerhalb des gleichen Abschnitts
+      grids.forEach(({ iso }) => {
+        iso.layout(); // immer layouten – optional optimierbar
         setTimeout(() => iso.layout(), 100);
-        setTimeout(() => iso.layout(), 500);
+        setTimeout(() => iso.layout(), 200);
+        setTimeout(() => iso.layout(), 300);
+      });
+    });
+
+/* ===============================================================
+   Masonry-Update NACH Accordion-Transition
+   =============================================================== */
+
+// Alle Accordion-Contents beobachten, NICHT nur den Titel
+document.querySelectorAll('.ud-accordion__content').forEach((content) => {
+    content.addEventListener('transitionend', () => {
+
+        // Transition beendet → erst jetzt Layout neu berechnen
+        grids.forEach(({ iso }) => {
+            iso.layout();
+            setTimeout(() => iso.layout(), 50);
+            setTimeout(() => iso.layout(), 150);
+            setTimeout(() => iso.layout(), 300);
+        });
     });
 });
+  });
 
-// Layout neu berechnen bei Toggle-Klicks
-
-document.querySelectorAll('.ud-accordion__title').forEach((toggle) => {
-	toggle.addEventListener('click', () => {
-		// Finde das nächste UL innerhalb des gleichen Abschnitts
-		grids.forEach(({ iso }) => {
-			iso.layout(); // immer layouten – optional optimierbar
-			setTimeout(() => iso.layout(), 100);
-			setTimeout(() => iso.layout(), 200);
-			setTimeout(() => iso.layout(), 300);
-		});
-	});
-});
-
-
-
-/* =============================================================== *\ 
+  /* =============================================================== *\
    Breakpoint-Handling:
 	- Sucht alle .wp-block-ud-loop-block-Container
 	- Liest das data-breakpoints-Attribut aus
@@ -82,56 +99,55 @@ document.querySelectorAll('.ud-accordion__title').forEach((toggle) => {
 	- Blendet Listeneinträge (<li>) entsprechend aus oder ein
 	- Aktualisiert sich automatisch beim Fenster-Resize mit Debounce (200 ms Verzögerung), um Performance zu schonen.
 \* =============================================================== */
-function applyUdLoopBreakpoints() {
-	const wrappers = document.querySelectorAll('.wp-block-ud-loop-block');
+  function applyUdLoopBreakpoints() {
+    const wrappers = document.querySelectorAll(".wp-block-ud-loop-block");
 
-	wrappers.forEach((wrapper) => {
-		const breakpointData = wrapper.getAttribute('data-breakpoints');
-		if (!breakpointData) return;
-		let breakpoints;
-		try {
-			breakpoints = JSON.parse(breakpointData);
-		} catch (e) {
-			console.error('Fehler beim Parsen der Breakpoints:', e);
-			return;
-		}
-		
-		breakpoints.sort((a, b) => a.maxWidth - b.maxWidth);
+    wrappers.forEach((wrapper) => {
+      const breakpointData = wrapper.getAttribute("data-breakpoints");
+      if (!breakpointData) return;
+      let breakpoints;
+      try {
+        breakpoints = JSON.parse(breakpointData);
+      } catch (e) {
+        console.error("Fehler beim Parsen der Breakpoints:", e);
+        return;
+      }
 
-		const list = wrapper.querySelector('.ud-loop-list');
-		if (!list) return;
+      breakpoints.sort((a, b) => a.maxWidth - b.maxWidth);
 
-		const items = list.querySelectorAll('li');
-		if (!items.length) return;
+      const list = wrapper.querySelector(".ud-loop-list");
+      if (!list) return;
 
-		const width = window.innerWidth;
-		let maxItems = null;
+      const items = list.querySelectorAll("li");
+      if (!items.length) return;
 
-		for (const bp of breakpoints) {
-			if (width <= bp.maxWidth) {
-				maxItems = bp.items;
-			}
-		}
+      const width = window.innerWidth;
+      let maxItems = null;
 
-		// Wenn kein Breakpoint passt: alle anzeigen
-		if (!maxItems) {
-			items.forEach((item) => (item.style.display = ''));
-			return;
-		}
+      for (const bp of breakpoints) {
+        if (width <= bp.maxWidth) {
+          maxItems = bp.items;
+        }
+      }
 
-		items.forEach((item, index) => {
-			item.style.display = index < maxItems ? '' : 'none';
-		});
-	});
-}
-applyUdLoopBreakpoints();
-// Bei Seitenaufruf
-document.addEventListener('DOMContentLoaded', applyUdLoopBreakpoints);
+      // Wenn kein Breakpoint passt: alle anzeigen
+      if (!maxItems) {
+        items.forEach((item) => (item.style.display = ""));
+        return;
+      }
 
-// Bei Resize
-window.addEventListener('resize', () => {
-	clearTimeout(window.__udLoopResizeTimeout);
-	window.__udLoopResizeTimeout = setTimeout(applyUdLoopBreakpoints, 200);
-});
+      items.forEach((item, index) => {
+        item.style.display = index < maxItems ? "" : "none";
+      });
+    });
+  }
+  applyUdLoopBreakpoints();
+  // Bei Seitenaufruf
+  document.addEventListener("DOMContentLoaded", applyUdLoopBreakpoints);
 
+  // Bei Resize
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__udLoopResizeTimeout);
+    window.__udLoopResizeTimeout = setTimeout(applyUdLoopBreakpoints, 200);
+  });
 });
