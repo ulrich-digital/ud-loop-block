@@ -2,21 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./block.json":
-/*!********************!*\
-  !*** ./block.json ***!
-  \********************/
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"ud/loop-block","title":"Custom Loop Block","category":"widgets","icon":"calendar","description":"Loop-Block mit erweiterten Einstellungen","editorStyle":"file:./build/editor-style.css","style":"file:./build/frontend-style.css","editorScript":"file:./build/editor-script.js","script":"file:./build/frontend-script.js","supports":{"html":false,"className":true},"usesContext":["postId"],"attributes":{"postType":{"type":"string","default":"post"},"selectedPageId":{"type":"number","default":0},"filterFutureDates":{"type":"boolean","default":false},"selectedPageParent":{"type":["number","null","string"],"default":null},"sortMode":{"type":"string","default":"published"},"sortOrder":{"type":"string","default":"DESC"},"breakpoints":{"type":"array","default":[]},"postCount":{"type":["number","null","string"],"default":null},"showReadMore":{"type":"boolean","default":false},"selectedTaxonomyTerm":{"type":"string","default":""},"layoutStyle":{"type":"string","default":"standard"}}}');
-
-/***/ }),
-
-/***/ "./src/js/edit.js":
+/***/ "./src/js/edit.js"
 /*!************************!*\
   !*** ./src/js/edit.js ***!
   \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -621,13 +611,13 @@ function Edit({
   });
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/js/save.js":
+/***/ "./src/js/save.js"
 /*!************************!*\
   !*** ./src/js/save.js ***!
   \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -638,77 +628,87 @@ function Save() {
   return null;
 }
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/block-editor":
-/*!*************************************!*\
-  !*** external ["wp","blockEditor"] ***!
-  \*************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/data":
-/*!******************************!*\
-  !*** external ["wp","data"] ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["data"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
-/***/ "@wordpress/i18n":
-/*!******************************!*\
-  !*** external ["wp","i18n"] ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["i18n"];
-
-/***/ }),
-
-/***/ "@wordpress/server-side-render":
-/*!******************************************!*\
-  !*** external ["wp","serverSideRender"] ***!
-  \******************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["serverSideRender"];
-
-/***/ }),
-
-/***/ "react/jsx-runtime":
+/***/ "react/jsx-runtime"
 /*!**********************************!*\
   !*** external "ReactJSXRuntime" ***!
   \**********************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = window["ReactJSXRuntime"];
 
-/***/ })
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/data"
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["data"];
+
+/***/ },
+
+/***/ "@wordpress/element"
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "@wordpress/server-side-render"
+/*!******************************************!*\
+  !*** external ["wp","serverSideRender"] ***!
+  \******************************************/
+(module) {
+
+module.exports = window["wp"]["serverSideRender"];
+
+/***/ },
+
+/***/ "./block.json"
+/*!********************!*\
+  !*** ./block.json ***!
+  \********************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"ud/loop-block","title":"Custom Loop Block","category":"widgets","icon":"calendar","description":"Loop-Block mit erweiterten Einstellungen","editorStyle":"file:./build/editor-style.css","style":"file:./build/frontend-style.css","editorScript":"file:./build/editor-script.js","script":"file:./build/frontend-script.js","supports":{"html":false,"className":true},"usesContext":["postId"],"attributes":{"postType":{"type":"string","default":"post"},"selectedPageId":{"type":"number","default":0},"filterFutureDates":{"type":"boolean","default":false},"selectedPageParent":{"type":["number","null","string"],"default":null},"sortMode":{"type":"string","default":"published"},"sortOrder":{"type":"string","default":"DESC"},"breakpoints":{"type":"array","default":[]},"postCount":{"type":["number","null","string"],"default":null},"showReadMore":{"type":"boolean","default":false},"selectedTaxonomyTerm":{"type":"string","default":""},"layoutStyle":{"type":"string","default":"standard"}}}');
+
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -730,6 +730,12 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
