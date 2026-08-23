@@ -5,8 +5,7 @@
  * Version:         1.0.0
  * Author:          ulrich.digital gmbh
  * Author URI:      https://ulrich.digital/
- * License:         GPL v2 or later
- * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ * License:         ulrich.digital Nutzungslizenz 1.0
  * Text Domain:     loop-block-ud
  */
 

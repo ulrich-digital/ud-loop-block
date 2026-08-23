@@ -103,24 +103,21 @@ Der Block verarbeitet folgende Post-Types:
 | `contentType` gesetzt                | Überschreibt Post-Type-Zuweisung (z. B. Gruppierung)                       |
 | REST-Response leer                   | Zeigt Platzhalterhinweis im Editor                                         |
 
+## Einblicke in die Umsetzung
 
+Der Beitrag gibt Einblick in die entwickelte Lösung und ihre Funktionsweise. Das Projekt zeigt den konkreten Einsatz.
 
-
-
-
-
-
-
+- **Mehr zur Lösung:** [Inhaltsübersichten in WordPress flexibel abfragen und redaktionell gestalten](https://ulrich.digital/inhaltsuebersichten-in-wordpress-flexibel-abfragen-und-redaktionell-gestalten/)
+- **Einblick ins Projekt:** [Bildung durchdacht vernetzt](https://ulrich.digital/referenzen/wordpress-plattform-inhaltsverwaltung/)
 
 ## Autor
 
 [ulrich.digital gmbh](https://ulrich.digital)
 
-
 ## Lizenz
 
-GPL v2 or later
-[https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+Dieses Projekt steht unter der [ulrich.digital Nutzungslizenz 1.0](LICENSE).
 
+Die unveränderte Software darf in eigenen und kommerziellen Projekten eingesetzt werden. Auf jeder öffentlich erreichbaren Website oder Anwendung muss [ulrich.digital gmbh](https://ulrich.digital) im Impressum, in einem Credits-Bereich oder auf einer vergleichbaren Informationsseite genannt werden. Verkauf, eigenständige Weitergabe, Unterlizenzierung und Änderungen bedürfen der vorherigen schriftlichen Zustimmung von ulrich.digital gmbh.
 
-
+Komponenten Dritter behalten ihre jeweiligen Lizenz- und Nutzungsbedingungen.

@@ -7,7 +7,7 @@
     "start": "webpack --watch --config webpack.config.js"
   },
   "author": "ulrich.digital gmbh",
-  "license": "GPL-2.0-or-later",
+  "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@wordpress/scripts": "^30.15.0"
   },
